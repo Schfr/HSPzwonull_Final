@@ -1,0 +1,12 @@
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
+body {
+  background: #303030;
+}
+
+.divider{
+  width:10px;
+  height:auto;
+  display:inline-block;
+}

@@ -1,0 +1,47 @@
+<h1>{{ courseData[0].title }}</h1>
+<p [innerHTML]="courseData[0].body"></p>
+
+<!--
+<div *ngFor="" style="margin-bottom: 25px;">
+  Schwierigkeitslevel: {{ courseDate.field_schwierigkeitslevel }}
+  <br>
+  Zeitraum: {{ courseDate.field_uhrzeit_beginn }} - {{ courseDate.field_uhrzeit_ende }}
+</div>
+-->
+
+<hr>
+<h2>Termine</h2>
+<table mat-table [dataSource]="courseData" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="wochentag">
+    <th mat-header-cell *matHeaderCellDef> Wochentag </th>
+    <td mat-cell *matCellDef="let course"> {{course.field_wochentag}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="schwierigkeitslevel">
+    <th mat-header-cell *matHeaderCellDef>Schwierigkeitslevel </th>
+    <td mat-cell *matCellDef="let course"> {{course.field_schwierigkeitslevel}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="ort">
+    <th mat-header-cell *matHeaderCellDef> Ort </th>
+    <td mat-cell *matCellDef="let course"> {{course.field_ort}} - {{course.field_strasse}}, {{course.field_postleitzahl}} {{course.field_stadt}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="uhrzeit">
+    <th mat-header-cell *matHeaderCellDef> Uhrzeit </th>
+    <td mat-cell *matCellDef="let course"> {{course.field_uhrzeit_beginn}} - {{course.field_uhrzeit_ende}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="anmeldungslink">
+    <th mat-header-cell *matHeaderCellDef> Anmeldung </th>
+    <td mat-cell *matCellDef="let course">
+      <div *ngIf="course.field_onlineanmeldung != false">
+        <a mat-list-item href="{{course.field_onlineanmeldung}}">Hier Klicken</a>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

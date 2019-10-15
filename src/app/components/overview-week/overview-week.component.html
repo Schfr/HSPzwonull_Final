@@ -1,0 +1,14 @@
+<br>
+<div *ngIf="dayID.length > 0">
+  <h2>Die Woche</h2>
+  <hr>
+  <mat-list>
+    <div *ngFor="let day of dayID">
+      <mat-list-item>
+        <a mat-list-item routerLink="/overview-kurseamwochentag/{{ day.id }}">{{day.day}}</a>
+        <p [innerHTML]="day.body"></p>
+      </mat-list-item>
+    </div>
+  </mat-list>
+</div>
+

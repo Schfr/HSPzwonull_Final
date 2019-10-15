@@ -1,0 +1,10 @@
+<br>
+<h2>Aktuelle Kurse</h2>
+<hr>
+<mat-list>
+<div *ngFor="let courses of kategorieData">
+  <mat-list-item>
+    <a mat-list-item routerLink="/detail-kurs/{{ courses.nid }}">{{courses.title}}</a>
+  </mat-list-item>
+</div>
+</mat-list>

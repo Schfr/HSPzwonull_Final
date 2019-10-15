@@ -1,0 +1,15 @@
+<div *ngIf="topcourses.length > 0">
+  <mat-accordion>
+    <h2>Topkurse</h2>
+    <div *ngFor="let course of topcourses">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          {{ course.title }}
+        </mat-expansion-panel-header>
+
+        <p [innerHTML]="course.body"></p>
+        <a mat-button routerLink="/detail-kurs/{{ course.nid }}">Link zum Kurs</a>
+      </mat-expansion-panel>
+    </div>
+  </mat-accordion>
+</div>

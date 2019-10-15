@@ -1,0 +1,14 @@
+<br>
+<div *ngIf="categories.length > 0">
+  <h2>Kategorien</h2>
+  <hr>
+  <mat-list>
+  <div *ngFor="let course of categories">
+    <mat-list-item>
+    <a mat-list-item routerLink="/overview-kurse/{{ course.nid }}">{{course.title}}</a>
+      <p [innerHTML]="course.body"></p>
+    </mat-list-item>
+  </div>
+  </mat-list>
+</div>
+

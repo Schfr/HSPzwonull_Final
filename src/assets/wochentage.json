@@ -1,0 +1,7 @@
+[{ "day" : "Montag" , "id" : "8"},
+  { "day" : "Dienstag" , "id" : "9"},
+  { "day" : "Mittwoch" , "id" : "10"},
+  { "day" : "Donnerstag" , "id" : "11"},
+  { "day" : "Freitag" , "id" : "12"},
+  { "day" : "Samstag" , "id" : "13"},
+  { "day" : "Sonntag" , "id" : "14"}]
